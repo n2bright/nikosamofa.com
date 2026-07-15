@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Node / build junk (in case you add tooling later)
+node_modules/
+dist/
+.env
+.env.local
+
+# Logs
+*.log
