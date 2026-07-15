@@ -25,6 +25,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- Beehiiv attribution tracker -->
+  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 
   <style>
     /* ============================================
@@ -804,6 +806,20 @@
       .meta-row .left, .meta-row .right { gap: 10px; }
       .meta-row a { font-size: 11px; }
     }
+    /* ============================================
+   Beehiiv embed — style to match the operator theme
+   ============================================ */
+   .newsletter-embed {
+  max-width: 520px;
+  margin-bottom: 18px;
+         }
+.newsletter-embed iframe {
+  background: transparent !important;
+  color-scheme: dark;
+  width: 100% !important;
+  min-height: 60px;
+  border: none;
+}
 
   </style>
 </head>
@@ -912,7 +928,7 @@
     </div>
 
     <div class="climb">
-      <p>I started in IT as an application analyst. Got curious about cybersecurity — not the Hollywood version, the boring institutional version. The version where someone has to actually read the policy, audit the configuration, and tell the partner that yes, this needs to change.</p>
+      <p>I started in IT at the Helpdesk. Got curious about cybersecurity — not the Hollywood version, the boring institutional version. The version where someone has to actually read the policy, audit the configuration, and tell the partner that yes, this needs to change.</p>
 
       <p>I stacked the certifications people actually respect (Security+, CySA+, PenTest+). I went to work for one of the largest law firms in the world, running vendor risk reviews on the AI platforms attorneys are starting to use, governing access across enterprise SaaS, and operating Microsoft 365 security at scale.</p>
 
@@ -983,7 +999,7 @@
 
       <article class="cert">
         <div>
-          <h3 class="cert-name">M.S. — IT &amp; Cybersecurity</h3>
+          <h3 class="cert-name">M.S. — Cybersecurity &amp; Information Assurance</h3>
           <div class="cert-issuer">Western Governors University</div>
         </div>
         <div class="cert-status progress"><span class="pip" aria-hidden="true"></span>In progress</div>
@@ -1038,10 +1054,8 @@
       Each gives you an HTML form snippet — swap in the `action` URL
       and adjust the `name` attribute of the email input if needed.
     -->
-    <form class="newsletter-form" id="newsletter-form" action="#" method="post" novalidate>
-      <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required autocomplete="email" />
-      <button type="submit">Subscribe</button>
-    </form>
+    <div class="newsletter-embed">
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="677e5953-165c-4e98-af9d-8de20ba11081"></script></div>
     <div class="newsletter-note">No spam. No daily emails. Unsubscribe anytime.</div>
     <div class="newsletter-msg" id="newsletter-msg" role="status" aria-live="polite">
       → You're in. Check your inbox for confirmation.
@@ -1071,7 +1085,7 @@
         <div class="project-mark">// repo</div>
         <h3 class="project-title">GitHub</h3>
         <p class="project-desc">Lab notes, automation scripts, and the work that's open enough to share. Cybersecurity tooling, M365 utilities, and learning artifacts.</p>
-        <a class="project-link" href="https://github.com/nikosamofa">View profile <span aria-hidden="true">↗</span></a>
+        <a class="project-link" href="https://github.com/n2bright/NKS_Portfolio">View profile <span aria-hidden="true">↗</span></a>
       </article>
 
       <article class="project">
@@ -1131,27 +1145,6 @@
     <span>© 2026 Nikos Amofa</span>
     <span>Built methodically · NYC&thinsp;/&thinsp;JC</span>
   </footer>
-
-  <script>
-    // Newsletter form — basic UX wrapper.
-    // Replace the form's `action` attribute with your provider's endpoint
-    // and remove this script (or adapt it) to use the provider's flow.
-    (function () {
-      var form = document.getElementById('newsletter-form');
-      var msg = document.getElementById('newsletter-msg');
-      if (!form) return;
-      form.addEventListener('submit', function (e) {
-        // If you've set a real action URL above, let the browser submit normally.
-        if (form.getAttribute('action') && form.getAttribute('action') !== '#') return;
-        e.preventDefault();
-        var email = form.querySelector('input[type="email"]');
-        if (!email || !email.value) return;
-        msg.classList.add('show');
-        form.reset();
-        setTimeout(function () { msg.classList.remove('show'); }, 6000);
-      });
-    })();
-  </script>
 
   <!-- ============================================
        OPERATOR FIELD — three.js scene
